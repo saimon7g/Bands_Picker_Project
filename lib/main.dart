@@ -1,7 +1,8 @@
+
+import 'package:bands_picker/Accounts.dart';
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import 'Bookings.dart';
-import 'Acounts.dart';
 import 'Message.dart';
 
 
@@ -68,19 +69,19 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home ,color: Colors.black,),
             label: 'HOME',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.book),
+            icon: Icon(Icons.book,color: Colors.black,),
             label: 'Bookings.dart',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
+            icon: Icon(Icons.message,color: Colors.black,),
             label: 'Message',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            icon: Icon(Icons.account_circle,color: Colors.black,),
             label: 'Account',
           ),
         ],
