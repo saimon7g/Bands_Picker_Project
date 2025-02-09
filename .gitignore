@@ -1,0 +1,47 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+.env              # Environment variables
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ/Android Studio related
+*.iml
+*.ipr
+*.iws
+.idea/            # Android Studio project settings
+*.gradle          # Local Gradle files
+
+# VS Code related
+.vscode/          # User-specific VS Code settings
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Android build related
+/android/app/debug
+/android/app/profile
+/android/app/release
+/local.properties # Local SDK path (varies for each user)
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
