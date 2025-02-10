@@ -380,7 +380,8 @@ class Artcell extends StatelessWidget{
             ),
           ),
           SizedBox(height: 20,),
-          Text("Artecll Music BD", style: TextStyle(fontWeight: FontWeight.bold),),
+          Text("Artecll Music BD", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+          SizedBox(height: 15,),
           Text("Dhaka, Bangladesh"),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -414,6 +415,30 @@ class Artcell extends StatelessWidget{
                 ],
               ),
             ],
+          ),
+          SizedBox(height: 20,),
+          Text("About Artcell", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+          Text("Artcell is a Bangladeshi progressive metal band formed in 23 October 1999, "
+              "by vocalist and riff guitarist George Lincoln D'Costa, lead guitarist Ershad Zaman, "
+              "bassist Saef Al Nazi Cézanne and drummer Kazi Sajjadul Asheqeen Shaju."),
+          SizedBox(height: 20,),
+          Text("Price Details", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+          Row(
+            children: [
+              Icon(Icons.attach_money),
+              Text("Start from 40,000"),
+            ],
+          ),
+          ElevatedButton(
+            onPressed: ()=> print("They are booking"),
+            child: Container(
+              color: Colors.blue,
+              child: Center(
+                child: Text(
+                  "Request For Book", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
           ),
         ],
       ),
