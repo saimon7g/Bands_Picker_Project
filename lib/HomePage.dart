@@ -50,28 +50,34 @@ class HomePage extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      child: Column(
-                        children: [
-                          Expanded(
-                            flex: 7,
-                            child: Image.asset(
-                              "assets/Artcell.png",
-                              fit: BoxFit.fill,
-                              width: double.infinity,
-                            ),
-                          ),
-                          Expanded(
-                            flex: 3,
-                            child: Container(
-                              alignment: Alignment.center,
-                              color: Colors.white,
-                              child: Text(
-                                "Artcell",
-                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.pushNamed(context, '/Artcell'),
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: Column(
+                          children: [
+                            Expanded(
+                              flex: 7,
+                              child: Image.asset(
+                                "assets/Artcell.png",
+                                fit: BoxFit.fill,
+                                width: double.infinity,
                               ),
                             ),
-                          ),
-                        ],
+                            Expanded(
+                              flex: 3,
+                              child: Container(
+                                alignment: Alignment.center,
+                                color: Colors.white,
+                                child: Text(
+                                  "Artcell",
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Container(
@@ -83,28 +89,34 @@ class HomePage extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      child: Column(
-                        children: [
-                          Expanded(
-                            flex: 7,
-                            child: Image.asset(
-                              "assets/Nogor Baul.png",
-                              fit: BoxFit.fill,
-                              width: double.infinity,
-                            ),
+                      child: ElevatedButton(
+                          onPressed: () => Navigator.pushNamed(context, '/NogorB'),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.zero,
                           ),
-                          Expanded(
-                            flex: 3,
-                            child: Container(
-                              alignment: Alignment.center,
-                              color: Colors.white,
-                              child: Text(
-                                "Nogor Baul",
-                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                flex: 7,
+                                child: Image.asset(
+                                  "assets/Nogor Baul.png",
+                                  fit: BoxFit.fill,
+                                  width: double.infinity,
+                                ),
                               ),
-                            ),
+                              Expanded(
+                                flex: 3,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  color: Colors.white,
+                                  child: Text(
+                                    "Nogor Baul",
+                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
                       ),
                     ),
                   ],
@@ -345,6 +357,77 @@ class HomePage extends StatelessWidget {
           // ),
         ],
       )
+    );
+  }
+}
+
+class Artcell extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Artcell Details"),),
+      body: ListView(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width*1.0,
+            height: 350,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              border: Border.all(
+                color: Colors.black,
+                width: 3,
+              ),
+            ),
+          ),
+          SizedBox(height: 20,),
+          Text("Artecll Music BD", style: TextStyle(fontWeight: FontWeight.bold),),
+          Text("Dhaka, Bangladesh"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  Icon(Icons.person),
+                  SizedBox(height: 5,),
+                  Text("5 Musician"),
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(Icons.audiotrack),
+                  SizedBox(height: 5,),
+                  Text("15 Concert"),
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(Icons.audiotrack),
+                  SizedBox(height: 5,),
+                  Text("Metal Band"),
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(Icons.flight),
+                  SizedBox(height: 5,),
+                  Text("Way of journey"),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class NogorB extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text("Nogor Baul"),
+      ),
     );
   }
 }
