@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'nav_bar.dart';
 
-class AccountScreen extends StatelessWidget {
+
+class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +99,6 @@ class AccountScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: CustomNavBar(), // ✅ Using Custom NavBar
     );
   }
 }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'nav_bar.dart';
 import 'package:get/get.dart';
 
-class MessageScreen extends StatelessWidget {
+class MessagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,8 +146,6 @@ class MessageScreen extends StatelessWidget {
           ),
         ],
       ),
-
-      bottomNavigationBar: CustomNavBar(), // ✅ Using Custom NavBar
     );
   }
 }
