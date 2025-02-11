@@ -8,7 +8,6 @@ import 'Message.dart';
 
 
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -66,26 +65,19 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
+        selectedItemColor: Colors.deepPurple,
+        unselectedItemColor: Colors.black,
+        selectedLabelStyle: const TextStyle(color: Colors.deepPurple),
+        unselectedLabelStyle: const TextStyle(color: Colors.black),
         onTap: _onItemTapped,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home ,color: Colors.black,),
-            label: 'HOME',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book,color: Colors.black,),
-            label: 'Bookings.dart',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message,color: Colors.black,),
-            label: 'Message',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle,color: Colors.black,),
-            label: 'Account',
-          ),
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Bookings'),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Message'),
+          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Account'),
         ],
       ),
+
     );
   }
 }
