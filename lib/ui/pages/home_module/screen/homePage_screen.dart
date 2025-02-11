@@ -361,22 +361,89 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class Artcell extends StatelessWidget{
+class Artcell extends StatefulWidget {
+  @override
+  _ArtcellState createState() => _ArtcellState();
+}
+
+class _ArtcellState extends State<Artcell> {
+  final PageController _pageController = PageController(initialPage: 0);
+  int _currentPage = 0;
+
+  final List<String> images = [
+    "assets/Artcell.png",
+    "assets/Ashes.png",
+  ];
+
+  void _nextPage() {
+    if (_currentPage < images.length - 1) {
+      _pageController.nextPage(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
+  void _previousPage() {
+    if (_currentPage > 0) {
+      _pageController.previousPage(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Artcell Details"),),
+      appBar: AppBar(title: Text("Artcell Details")),
       body: ListView(
         children: [
           Container(
-            width: MediaQuery.of(context).size.width*1.0,
+            width: MediaQuery.of(context).size.width,
             height: 350,
             decoration: BoxDecoration(
               color: Colors.blue,
-              border: Border.all(
-                color: Colors.black,
-                width: 3,
-              ),
+              border: Border.all(color: Colors.black, width: 3),
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                PageView.builder(
+                  controller: _pageController,
+                  itemCount: images.length,
+                  onPageChanged: (index) {
+                    setState(() {
+                      _currentPage = index;
+                    });
+                  },
+                  itemBuilder: (context, index) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        images[index],
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                        height: 350,
+                      ),
+                    );
+                  },
+                ),
+                Positioned(
+                  left: 10,
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                    onPressed: _previousPage,
+                  ),
+                ),
+                Positioned(
+                  right: 10,
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
+                    onPressed: _nextPage,
+                  ),
+                ),
+              ],
             ),
           ),
           SizedBox(height: 20,),
@@ -445,6 +512,92 @@ class Artcell extends StatelessWidget{
     );
   }
 }
+
+
+// class Artcell extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Artcell Details"),),
+//       body: ListView(
+//         children: [
+//           Container(
+//             width: MediaQuery.of(context).size.width*1.0,
+//             height: 350,
+//             decoration: BoxDecoration(
+//               color: Colors.blue,
+//               border: Border.all(
+//                 color: Colors.black,
+//                 width: 3,
+//               ),
+//             ),
+//           ),
+//           SizedBox(height: 20,),
+//           Text("Artecll Music BD", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+//           SizedBox(height: 15,),
+//           Text("Dhaka, Bangladesh"),
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//             children: [
+//               Column(
+//                 children: [
+//                   Icon(Icons.person),
+//                   SizedBox(height: 5,),
+//                   Text("5 Musician"),
+//                 ],
+//               ),
+//               Column(
+//                 children: [
+//                   Icon(Icons.audiotrack),
+//                   SizedBox(height: 5,),
+//                   Text("15 Concert"),
+//                 ],
+//               ),
+//               Column(
+//                 children: [
+//                   Icon(Icons.audiotrack),
+//                   SizedBox(height: 5,),
+//                   Text("Metal Band"),
+//                 ],
+//               ),
+//               Column(
+//                 children: [
+//                   Icon(Icons.flight),
+//                   SizedBox(height: 5,),
+//                   Text("Way of journey"),
+//                 ],
+//               ),
+//             ],
+//           ),
+//           SizedBox(height: 20,),
+//           Text("About Artcell", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+//           Text("Artcell is a Bangladeshi progressive metal band formed in 23 October 1999, "
+//               "by vocalist and riff guitarist George Lincoln D'Costa, lead guitarist Ershad Zaman, "
+//               "bassist Saef Al Nazi Cézanne and drummer Kazi Sajjadul Asheqeen Shaju."),
+//           SizedBox(height: 20,),
+//           Text("Price Details", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+//           Row(
+//             children: [
+//               Icon(Icons.attach_money),
+//               Text("Start from 40,000"),
+//             ],
+//           ),
+//           ElevatedButton(
+//             onPressed: ()=> print("They are booking"),
+//             child: Container(
+//               color: Colors.blue,
+//               child: Center(
+//                 child: Text(
+//                   "Request For Book", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
 class NogorB extends StatelessWidget{
   @override
