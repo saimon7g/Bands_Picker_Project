@@ -1,9 +1,9 @@
 
-import 'package:bands_picker/Accounts.dart';
+import 'package:bands_picker/ui/pages/account_module/screen/account_screen.dart';
 import 'package:flutter/material.dart';
-import 'HomePage.dart';
-import 'Bookings.dart';
-import 'Message.dart';
+import 'ui/pages/home_module/screen/homePage_screen.dart';
+import 'ui/pages/booking_module/screen/booking_screen.dart';
+import 'ui/pages/message_module/screen/message_screen.dart';
 
 
 
@@ -19,6 +19,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/Artcell' : (context) => Artcell(),
+        '/NogorB' : (context) => NogorB(),
+      },
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -74,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.book,color: Colors.black,),
-            label: 'Bookings.dart',
+            label: 'booking_screen.dart',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.message,color: Colors.black,),
