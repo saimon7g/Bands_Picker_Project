@@ -1,13 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'ui/pages/account_module/screen/account_screen.dart';
 import 'ui/pages/home_module/screen/home_screen.dart';
 import 'ui/pages/booking_module/screen/booking_screen.dart';
 import 'ui/pages/message_module/screen/message_screen.dart';
-
-
-
-
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +36,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
-   final List<Widget> _pages = <Widget>[
+  final List<Widget> _pages = <Widget>[
     HomePage(),
     BookingsPage(),
     MessagePage(),
@@ -66,22 +61,38 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
+        selectedItemColor: Colors.deepPurple,
+        unselectedItemColor: Colors.black,
+        selectedLabelStyle: const TextStyle(color: Colors.deepPurple),
+        unselectedLabelStyle: const TextStyle(color: Colors.black),
         onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home ,color: Colors.black,),
+            icon: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
             label: 'HOME',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.book,color: Colors.black,),
+            icon: Icon(
+              Icons.book,
+              color: Colors.black,
+            ),
             label: 'booking_screen.dart',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message,color: Colors.black,),
+            icon: Icon(
+              Icons.message,
+              color: Colors.black,
+            ),
             label: 'Message',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle,color: Colors.black,),
+            icon: Icon(
+              Icons.account_circle,
+              color: Colors.black,
+            ),
             label: 'Account',
           ),
         ],
@@ -89,7 +100,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-
-
