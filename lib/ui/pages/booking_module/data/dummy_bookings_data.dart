@@ -4,49 +4,49 @@ final List<Map<String, String>> bookings = [
     'date': '11 February 2023',
     'status': 'Confirmed',
     'participants': '5 participants, 10P sound, Lighting, Microphone',
-    'image': 'https://via.placeholder.com/50'
+    'image': 'assets/Artcell.png'
   },
   {
     'bandName': 'Shironmahin',
     'date': '11 February 2023',
     'status': 'Pending',
     'participants': '5 participants, 10P sound, Lighting, Microphone',
-    'image': 'https://via.placeholder.com/50'
+    'image': 'assets/Ashes.png'
   },
   {
     'bandName': 'Miles',
     'date': '11 February 2023',
     'status': 'Cancelled',
     'participants': '5 participants, 10P sound, Lighting, Microphone',
-    'image': 'https://via.placeholder.com/50'
+    'image': 'assets/Chirkut.png.jpg'
   },
   {
     'bandName': 'Dads In The Park',
     'date': '11 February 2025',
     'status': 'Pending',
     'participants': '50 participants, 10P sound, Lighting, Microphone',
-    'image': 'https://via.placeholder.com/50'
+    'image': 'assets/Frame 1.png'
   },
   {
     'bandName': 'Shironmahin',
     'date': '11 February 2023',
     'status': 'Pending',
     'participants': '5 participants, 10P sound, Lighting, Microphone',
-    'image': 'https://via.placeholder.com/50'
+    'image': 'assets/LRB.png'
   },
   {
     'bandName': 'Miles',
     'date': '11 February 2023',
     'status': 'Cancelled',
     'participants': '5 participants, 10P sound, Lighting, Microphone',
-    'image': 'https://via.placeholder.com/50'
+    'image': 'assets/Miles.png'
   },
   {
     'bandName': 'Dads In The Park',
     'date': '11 February 2025',
     'status': 'Pending',
     'participants': '50 participants, 10P sound, Lighting, Microphone',
-    'image': 'https://via.placeholder.com/50'
+    'image': 'assets/Warfaze.png'
   },
 
 

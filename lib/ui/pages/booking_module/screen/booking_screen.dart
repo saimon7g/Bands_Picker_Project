@@ -41,7 +41,7 @@ class _BookingsPageState extends State<BookingsPage> with SingleTickerProviderSt
                 children: [
                   TextSpan(
                     text: 'Picker',
-                    style: TextStyle(color: Color(0xFFEF9A9A), fontWeight: FontWeight.w600, height: 30),
+                    style: TextStyle(color: AppColor.secondaryRed, fontWeight: FontWeight.w600, height: 30),
                   ),
                 ],
               ),
