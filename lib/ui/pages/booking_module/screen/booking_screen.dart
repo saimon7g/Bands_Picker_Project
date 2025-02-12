@@ -1,67 +1,18 @@
+import 'package:bands_picker/ui/components/bookings_module/bookings_card.dart';
+import 'package:bands_picker/ui/pages/booking_module/data/dummy_bookings_data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:bands_picker/ui/utils/constants/app_colors.dart';
 
 class BookingsPage extends StatefulWidget {
+  const BookingsPage({super.key});
+
   @override
   _BookingsPageState createState() => _BookingsPageState();
 }
 
 class _BookingsPageState extends State<BookingsPage> with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
-  final List<Map<String, String>> bookings = [
-    {
-      'bandName': 'Artcell Music BD',
-      'date': '11 February 2023',
-      'status': 'Confirmed',
-      'participants': '5 participants, 10P sound, Lighting, Microphone',
-      'image': 'https://via.placeholder.com/50'
-    },
-    {
-      'bandName': 'Shironmahin',
-      'date': '11 February 2023',
-      'status': 'Pending',
-      'participants': '5 participants, 10P sound, Lighting, Microphone',
-      'image': 'https://via.placeholder.com/50'
-    },
-    {
-      'bandName': 'Miles',
-      'date': '11 February 2023',
-      'status': 'Cancelled',
-      'participants': '5 participants, 10P sound, Lighting, Microphone',
-      'image': 'https://via.placeholder.com/50'
-    },
-    {
-      'bandName': 'Dads In The Park',
-      'date': '11 February 2025',
-      'status': 'Pending',
-      'participants': '50 participants, 10P sound, Lighting, Microphone',
-      'image': 'https://via.placeholder.com/50'
-    },
-    {
-      'bandName': 'Shironmahin',
-      'date': '11 February 2023',
-      'status': 'Pending',
-      'participants': '5 participants, 10P sound, Lighting, Microphone',
-      'image': 'https://via.placeholder.com/50'
-    },
-    {
-      'bandName': 'Miles',
-      'date': '11 February 2023',
-      'status': 'Cancelled',
-      'participants': '5 participants, 10P sound, Lighting, Microphone',
-      'image': 'https://via.placeholder.com/50'
-    },
-    {
-      'bandName': 'Dads In The Park',
-      'date': '11 February 2025',
-      'status': 'Pending',
-      'participants': '50 participants, 10P sound, Lighting, Microphone',
-      'image': 'https://via.placeholder.com/50'
-    },
-
-
-
-  ];
 
   @override
   void initState() {
@@ -72,31 +23,39 @@ class _BookingsPageState extends State<BookingsPage> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.bookingBackground,
       appBar: AppBar(
-        title: const Text.rich(
-          TextSpan(
-            text: 'Bands',
-            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
-            children: [
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              'assets/icons/mdi_music-circle.svg',
+              height: 32,
+              width: 32,
+            ),
+            const SizedBox(width: 8),
+            const Text.rich(
               TextSpan(
-                text: 'picker',
-                style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+                text: 'Bands',
+                style: TextStyle(color: AppColor.primaryPurple ,fontWeight: FontWeight.w600, height: 30),
+                children: [
+                  TextSpan(
+                    text: 'Picker',
+                    style: TextStyle(color: Color(0xFFEF9A9A), fontWeight: FontWeight.w600, height: 30),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColor.bookingBackground,
         elevation: 0,
         bottom: TabBar(
           controller: _tabController,
-          labelColor: Colors.red,
-          unselectedLabelColor: Colors.black54,
-          indicatorColor: Colors.red,
           tabs: const [
             Tab(text: 'All'),
-            Tab(text: 'Upcoming'),
+            Tab(text: 'Confirmed'),
             Tab(text: 'Ongoing'),
           ],
         ),
@@ -122,46 +81,7 @@ class _BookingsPageState extends State<BookingsPage> with SingleTickerProviderSt
       itemCount: filteredBookings.length,
       itemBuilder: (context, index) {
         final booking = filteredBookings[index];
-        return Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          elevation: 3,
-          margin: const EdgeInsets.symmetric(vertical: 8),
-          child: ListTile(
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage(booking['image']!),
-              radius: 25,
-            ),
-            title: Text(
-              booking['bandName']!,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(booking['date']!),
-                const SizedBox(height: 4),
-                Text(
-                  'Status: ${booking['status']}',
-                  style: TextStyle(
-                    color: booking['status'] == 'Confirmed'
-                        ? Colors.green
-                        : booking['status'] == 'Pending'
-                        ? Colors.orange
-                        : Colors.red,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  booking['participants']!,
-                  style: const TextStyle(color: Colors.black54),
-                ),
-              ],
-            ),
-          ),
-        );
+        return BookingCard(booking: booking); // Use the new BookingCard widget
       },
     );
   }
