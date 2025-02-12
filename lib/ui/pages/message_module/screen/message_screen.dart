@@ -1,43 +1,55 @@
+import 'package:bands_picker/ui/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class MessagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      backgroundColor: Colors.white70,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Center(
-          child: Row(
-            mainAxisAlignment:
-            MainAxisAlignment.center, // ✅ Centers the content
-            mainAxisSize: MainAxisSize.min, // ✅ Prevents taking full width
-            children: [
-              CircleAvatar(
-                backgroundImage: AssetImage('assets/images/Vector.png'),
-                radius: 20,
-              ),
-              Text("Bandspicker",
-                  style: TextStyle(
-                    fontSize: 26,
-                  ))
-            ],
-          ),
-        ),
-        backgroundColor: Colors.cyan,
+      backgroundColor: AppColor.backgroundColor,
+      appBar: PreferredSize(
+        preferredSize: Size(360, 64),
+        child: Padding(
+            padding: EdgeInsets.fromLTRB(95, 16, 95, 16),
+            child: AppBar(
+              centerTitle: true,
+              title: Image.asset("assets/images/appbarLogo.png"),
+              backgroundColor: AppColor.backgroundColor,
+              elevation: 0,
+            )),
       ),
       body: Column(
         children: [
           ListTile(
-            title: Text("Abu Sufian",
-              style: TextStyle(fontWeight: FontWeight.bold),),
-            subtitle: Text("Could you please tell me your"),
-            leading: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/Ellipse 55.png') , // Local image
-                radius: 25
+            title: Text(
+              "Abu Sufian",
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            subtitle: Text("Could you please tell me your"),
+            tileColor: UnseenMessageColor.backgroundColor,
+            trailing: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  DateFormat('hh:mm a').format(DateTime.now()), // Shows time
+                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                ),
+                SizedBox(height: 9), // Space between time and unread count
+                CircleAvatar(
+                  radius: 9,
+                  backgroundColor: Colors.deepOrangeAccent,
+                  child: Text(
+                    "3",
+                    style: TextStyle(color: Colors.white, fontSize: 11),
+                  ),
+                ),
+              ],
+            ),
+            leading: CircleAvatar(
+                backgroundImage:
+                    AssetImage('assets/images/Ellipse 55.png'), // Local image
+                radius: 25),
             onTap: () {
               Get.defaultDialog(
                 titlePadding: EdgeInsets.only(top: 10),
@@ -50,13 +62,34 @@ class MessagePage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("Omar Faruk",
-              style: TextStyle(fontWeight: FontWeight.bold),),
-            subtitle: Text("Could you please tell me your"),
-            leading: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/Ellipse 55 (1).png') , // Local image
-                radius: 25
+            title: Text(
+              "Omar Faruk",
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            subtitle: Text("Could you please tell me your"),
+            tileColor: UnseenMessageColor.backgroundColor,
+            trailing: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  DateFormat('hh:mm a').format(DateTime.now()), // Shows time
+                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                ),
+                SizedBox(height: 10), // Space between time and unread count
+                CircleAvatar(
+                  radius: 9,
+                  backgroundColor: Colors.deepOrangeAccent,
+                  child: Text(
+                    "1",
+                    style: TextStyle(color: Colors.white, fontSize: 11),
+                  ),
+                ),
+              ],
+            ),
+            leading: CircleAvatar(
+                backgroundImage: AssetImage(
+                    'assets/images/Ellipse 55 (1).png'), // Local image
+                radius: 25),
             onTap: () {
               Get.defaultDialog(
                 titlePadding: EdgeInsets.only(top: 10),
@@ -69,13 +102,34 @@ class MessagePage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("S M Emon",
-              style: TextStyle(fontWeight: FontWeight.bold),),
-            subtitle: Text("Could you please tell me your"),
-            leading: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/Ellipse 55.png') , // Local image
-                radius: 25
+            title: Text(
+              "S M Emon",
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            subtitle: Text("Could you please tell me your"),
+            tileColor: UnseenMessageColor.backgroundColor,
+            trailing: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  DateFormat('hh:mm a').format(DateTime.now()), // Shows time
+                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                ),
+                SizedBox(height: 10), // Space between time and unread count
+                CircleAvatar(
+                  radius: 9,
+                  backgroundColor: Colors.deepOrangeAccent,
+                  child: Text(
+                    "1",
+                    style: TextStyle(color: Colors.white, fontSize: 11),
+                  ),
+                ),
+              ],
+            ),
+            leading: CircleAvatar(
+                backgroundImage:
+                    AssetImage('assets/images/Ellipse 55.png'), // Local image
+                radius: 25),
             onTap: () {
               Get.defaultDialog(
                 titlePadding: EdgeInsets.only(top: 10),
@@ -88,13 +142,29 @@ class MessagePage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("Afridi",
-              style: TextStyle(fontWeight: FontWeight.bold),),
-            subtitle: Text("Could you please tell me your"),
-            leading: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/Ellipse 55 (1).png') , // Local image
-                radius: 25
+            title: Text(
+              "Afridi",
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            subtitle: Text("Could you please tell me your"),
+            trailing: Column(
+              //mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  DateFormat('d MMMM yy').format(DateTime.now()), // Shows time
+                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                ),
+                SizedBox(height: 10), // Space between time and unread count
+                Text(
+                  "1",
+                  style: TextStyle(color: Colors.white, fontSize: 11),
+                ),
+              ],
+            ),
+            leading: CircleAvatar(
+                backgroundImage:
+                AssetImage('assets/images/Ellipse 55 (1).png'), // Local image
+                radius: 25),
             onTap: () {
               Get.defaultDialog(
                 titlePadding: EdgeInsets.only(top: 10),
@@ -107,13 +177,18 @@ class MessagePage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("Kaium",
-              style: TextStyle(fontWeight: FontWeight.bold),),
-            subtitle: Text("Could you please tell me your"),
-            leading: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/Ellipse 55.png') , // Local image
-                radius: 25
+            title: Text(
+              "Kaium",
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            subtitle: Text("Could you please tell me your"),
+            trailing: Text(
+                        DateFormat('d MMMM yy').format(DateTime.now()), // Shows time
+                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                        ),
+            leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/Ellipse 55.png'), // Local image
+                radius: 25),
             onTap: () {
               Get.defaultDialog(
                 titlePadding: EdgeInsets.only(top: 10),
@@ -126,13 +201,19 @@ class MessagePage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("Rakib",
-              style: TextStyle(fontWeight: FontWeight.bold),),
-            subtitle: Text("Could you please tell me your"),
-            leading:CircleAvatar(
-                backgroundImage: AssetImage('assets/images/Ellipse 55 (1).png') , // Local image
-                radius: 25
+            title: Text(
+              "Rakib",
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            subtitle: Text("Could you please tell me your"),
+            trailing: Text(
+            DateFormat('d MMMM yy').format(DateTime.now()), // Shows time
+            style: TextStyle(fontSize: 12, color: Colors.grey),
+          ),
+            leading: CircleAvatar(
+                backgroundImage: AssetImage(
+                    'assets/images/Ellipse 55 (1).png'), // Local image
+                radius: 25),
             onTap: () {
               Get.defaultDialog(
                 titlePadding: EdgeInsets.only(top: 10),
@@ -148,4 +229,13 @@ class MessagePage extends StatelessWidget {
       ),
     );
   }
+}
+
+void getCurrentTime() {
+  DateTime now = DateTime.now();
+
+  String formattedDate =
+      DateFormat('yyyy-MM-dd').format(now); // Example: 2025-02-12
+  String formattedTime = DateFormat('hh:mm a').format(now); // Example: 02:30 PM
+
 }
