@@ -1,9 +1,9 @@
 
+import 'package:bands_picker/Accounts.dart';
 import 'package:flutter/material.dart';
-import 'ui/pages/account_module/screen/account_screen.dart';
-import 'ui/pages/home_module/screen/home_screen.dart';
-import 'ui/pages/booking_module/screen/booking_screen.dart';
-import 'ui/pages/message_module/screen/message_screen.dart';
+import 'HomePage.dart';
+import 'Bookings.dart';
+import 'Message.dart';
 
 
 
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.book,color: Colors.black,),
-            label: 'booking_screen.dart',
+            label: 'Bookings.dart',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.message,color: Colors.black,),
