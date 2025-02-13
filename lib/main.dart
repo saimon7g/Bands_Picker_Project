@@ -22,6 +22,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/Artcell' : (context) => Artcell(),
         '/NogorB' : (context) => NogorB(),
+        '/warfaze' : (context) => Warfaze(),
+        '/miles' : (context) => Miles(),
+        '/bookingPolicies' : (context) => BookingPolicies(),
       },
       title: 'Flutter Demo',
       theme: ThemeData(
