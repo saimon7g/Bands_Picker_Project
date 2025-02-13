@@ -26,7 +26,8 @@ class MessagePage extends StatelessWidget {
               "Abu Sufian",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: Text("Could you please tell me your"),
+            subtitle: Text("Could you please tell me your",
+              style: TextStyle(color:Colors.black38),),
             tileColor: UnseenMessageColor.backgroundColor,
             trailing: Column(
               mainAxisSize: MainAxisSize.min,
@@ -66,7 +67,8 @@ class MessagePage extends StatelessWidget {
               "Omar Faruk",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: Text("Could you please tell me your"),
+            subtitle: Text("Could you please tell me your",
+                style: TextStyle(color:Colors.black38),),
             tileColor: UnseenMessageColor.backgroundColor,
             trailing: Column(
               mainAxisSize: MainAxisSize.min,
@@ -106,7 +108,8 @@ class MessagePage extends StatelessWidget {
               "S M Emon",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: Text("Could you please tell me your"),
+            subtitle: Text("Could you please tell me your",
+              style: TextStyle(color:Colors.black38),),
             tileColor: UnseenMessageColor.backgroundColor,
             trailing: Column(
               mainAxisSize: MainAxisSize.min,
@@ -146,7 +149,8 @@ class MessagePage extends StatelessWidget {
               "Afridi",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: Text("Could you please tell me your"),
+            subtitle: Text("Could you please tell me your",
+              style: TextStyle(color:Colors.black38),),
             trailing: Column(
               //mainAxisSize: MainAxisSize.min,
               children: [
@@ -181,7 +185,8 @@ class MessagePage extends StatelessWidget {
               "Kaium",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: Text("Could you please tell me your"),
+            subtitle: Text("Could you please tell me your",
+              style: TextStyle(color:Colors.black38),),
             trailing: Text(
                         DateFormat('d MMMM yy').format(DateTime.now()), // Shows time
                         style: TextStyle(fontSize: 12, color: Colors.grey),
@@ -205,7 +210,8 @@ class MessagePage extends StatelessWidget {
               "Rakib",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: Text("Could you please tell me your"),
+            subtitle: Text("Could you please tell me your",
+              style: TextStyle(color:Colors.black38),),
             trailing: Text(
             DateFormat('d MMMM yy').format(DateTime.now()), // Shows time
             style: TextStyle(fontSize: 12, color: Colors.grey),

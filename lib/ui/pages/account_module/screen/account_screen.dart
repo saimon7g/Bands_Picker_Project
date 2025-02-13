@@ -19,78 +19,75 @@ class AccountPage extends StatelessWidget {
     elevation: 0,
     )),
     ),
-      body: Padding(
-        padding: EdgeInsets.all(0),
-        child: Column(
-          children: [
-            // First Container (Profile)
-            Container(
-              width: 388,
-              height: 226,
-              decoration: BoxDecoration(
-                color: UnseenMessageColor.backgroundColor,
-              ),
-              child: Container(
-                height: 162,
-                width: 145,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage("assets/images/Ellipse 55.png"),
-                      radius: 40,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "Devon Lane",
-                      style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                    SizedBox(height: 5),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text("View Profile", style: TextStyle(color: Colors.deepOrangeAccent)),
-                    ),
-                  ],
-                ),
-              ),
+      body: Column(
+        children: [
+          // First Container (Profile)
+          Container(
+            width: 388,
+            height: 226,
+            decoration: BoxDecoration(
+              color: UnseenMessageColor.backgroundColor,
             ),
-
-            SizedBox(height: 20),
-
-            // Second Container (Other Options)
-            Container(
-              padding: EdgeInsets.all(16),
+            child: Container(
+              height: 162,
+              width: 145,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ListTile(
-                    title: Text("Personal Information"),
-                    leading: Icon(Icons.person_2_outlined, color: Colors.deepOrangeAccent),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
+                  CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/Ellipse 55.png"),
+                    radius: 40,
                   ),
-                  Divider(
-                    color: Colors.black.withOpacity(0.1),
+                  SizedBox(height: 10),
+                  Text(
+                    "Devon Lane",
+                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.black),
                   ),
-                  ListTile(
-                    title: Text("Let us help you"),
-                    leading: Icon(Icons.call, color: Colors.deepOrangeAccent),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
-                  ),
-                  Divider(
-                    color: Colors.black.withOpacity(0.1),
-                  ),
-                  ListTile(
-                    title: Text("Logout"),
-                    leading: Icon(Icons.logout, color: Colors.deepOrangeAccent),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
+                  SizedBox(height: 5),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("View Profile", style: TextStyle(color: Colors.deepOrangeAccent)),
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+
+          SizedBox(height: 20),
+
+          // Second Container (Other Options)
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text("Personal Information"),
+                  leading: Icon(Icons.person_2_outlined, color: Colors.deepOrangeAccent),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  onTap: () {},
+                ),
+                Divider(
+                  color: Colors.black.withOpacity(0.1),
+                ),
+                ListTile(
+                  title: Text("Let us help you"),
+                  leading: Icon(Icons.call, color: Colors.deepOrangeAccent),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  onTap: () {},
+                ),
+                Divider(
+                  color: Colors.black.withOpacity(0.1),
+                ),
+                ListTile(
+                  title: Text("Logout"),
+                  leading: Icon(Icons.logout, color: Colors.deepOrangeAccent),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  onTap: () {},
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
