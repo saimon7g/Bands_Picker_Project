@@ -9,7 +9,7 @@ class AccountPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColor.backgroundColor,
       appBar: PreferredSize(
-        preferredSize: Size(370, 64),
+        preferredSize: Size(360, 64),
     child: Padding(
     padding: EdgeInsets.fromLTRB(95, 16, 95, 16),
     child: AppBar(
