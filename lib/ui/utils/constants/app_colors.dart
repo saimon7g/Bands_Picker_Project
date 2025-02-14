@@ -2,11 +2,7 @@ import 'dart:ui';
 
 class AppColor{
   static const Color backgroundColor= Color(0xFFEFF6FF);
-}
-class UnseenMessageColor{
-  static const Color backgroundColor = Color (0xFFFFD1D1);
-}
+  static const Color countcoller = Color(0xFFFFFFFF);
+  static const Color notseenmessage = Color (0x14FF8080);
 
-class CountColor{
-  static const Color backgroundColor = Color(0xFFFFFFFF);
 }

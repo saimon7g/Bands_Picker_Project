@@ -28,7 +28,7 @@ class MessagePage extends StatelessWidget {
             ),
             subtitle: Text("Could you please tell me your",
               style: TextStyle(color:Colors.black38),),
-            tileColor: UnseenMessageColor.backgroundColor,
+            tileColor: AppColor.notseenmessage,
             trailing: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -49,7 +49,7 @@ class MessagePage extends StatelessWidget {
             ),
             leading: CircleAvatar(
                 backgroundImage:
-                    AssetImage('assets/images/Ellipse 55.png'), // Local image
+                AssetImage('assets/images/Ellipse 55.png'), // Local image
                 radius: 25),
             onTap: () {
               Get.defaultDialog(
@@ -68,8 +68,8 @@ class MessagePage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             subtitle: Text("Could you please tell me your",
-                style: TextStyle(color:Colors.black38),),
-            tileColor: UnseenMessageColor.backgroundColor,
+              style: TextStyle(color:Colors.black38),),
+            tileColor: AppColor.notseenmessage,
             trailing: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -110,7 +110,7 @@ class MessagePage extends StatelessWidget {
             ),
             subtitle: Text("Could you please tell me your",
               style: TextStyle(color:Colors.black38),),
-            tileColor: UnseenMessageColor.backgroundColor,
+            tileColor: AppColor.notseenmessage,
             trailing: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -131,7 +131,7 @@ class MessagePage extends StatelessWidget {
             ),
             leading: CircleAvatar(
                 backgroundImage:
-                    AssetImage('assets/images/Ellipse 55.png'), // Local image
+                AssetImage('assets/images/Ellipse 55.png'), // Local image
                 radius: 25),
             onTap: () {
               Get.defaultDialog(
@@ -188,9 +188,9 @@ class MessagePage extends StatelessWidget {
             subtitle: Text("Could you please tell me your",
               style: TextStyle(color:Colors.black38),),
             trailing: Text(
-                        DateFormat('d MMMM yy').format(DateTime.now()), // Shows time
-                        style: TextStyle(fontSize: 12, color: Colors.grey),
-                        ),
+              DateFormat('d MMMM yy').format(DateTime.now()), // Shows time
+              style: TextStyle(fontSize: 12, color: Colors.grey),
+            ),
             leading: CircleAvatar(
                 backgroundImage: AssetImage('assets/images/Ellipse 55.png'), // Local image
                 radius: 25),
@@ -213,9 +213,9 @@ class MessagePage extends StatelessWidget {
             subtitle: Text("Could you please tell me your",
               style: TextStyle(color:Colors.black38),),
             trailing: Text(
-            DateFormat('d MMMM yy').format(DateTime.now()), // Shows time
-            style: TextStyle(fontSize: 12, color: Colors.grey),
-          ),
+              DateFormat('d MMMM yy').format(DateTime.now()), // Shows time
+              style: TextStyle(fontSize: 12, color: Colors.grey),
+            ),
             leading: CircleAvatar(
                 backgroundImage: AssetImage(
                     'assets/images/Ellipse 55 (1).png'), // Local image
@@ -241,7 +241,7 @@ void getCurrentTime() {
   DateTime now = DateTime.now();
 
   String formattedDate =
-      DateFormat('yyyy-MM-dd').format(now); // Example: 2025-02-12
+  DateFormat('dd-MM-yyyy').format(now); // Example: 2025-02-12
   String formattedTime = DateFormat('hh:mm a').format(now); // Example: 02:30 PM
 
 }

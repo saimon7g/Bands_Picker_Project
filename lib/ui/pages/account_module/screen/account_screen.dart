@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../utils/constants/app_colors.dart';
-
 
 class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColor.backgroundColor,
+      backgroundColor: AppColor.backgroundColor,
       appBar: PreferredSize(
         preferredSize: Size(360, 64),
-    child: Padding(
-    padding: EdgeInsets.fromLTRB(95, 16, 95, 16),
-    child: AppBar(
-    centerTitle: true,
-    title: Image.asset("assets/images/appbarLogo.png"),
-    backgroundColor: AppColor.backgroundColor,
-    elevation: 0,
-    )),
-    ),
+        child: Padding(
+            padding: EdgeInsets.fromLTRB(95, 16, 95, 16),
+            child: AppBar(
+              centerTitle: true,
+              title: Image.asset("assets/images/appbarLogo.png"),
+              backgroundColor: AppColor.backgroundColor,
+              elevation: 0,
+            )),
+      ),
       body: Column(
         children: [
           // First Container (Profile)
@@ -26,7 +26,7 @@ class AccountPage extends StatelessWidget {
             width: 388,
             height: 226,
             decoration: BoxDecoration(
-              color: UnseenMessageColor.backgroundColor,
+              color: AppColor.notseenmessage,
             ),
             child: Container(
               height: 162,
@@ -41,12 +41,16 @@ class AccountPage extends StatelessWidget {
                   SizedBox(height: 10),
                   Text(
                     "Devon Lane",
-                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.black),
+                    style: TextStyle(
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                   SizedBox(height: 5),
                   TextButton(
                     onPressed: () {},
-                    child: Text("View Profile", style: TextStyle(color: Colors.deepOrangeAccent)),
+                    child: Text("View Profile",
+                        style: TextStyle(color: Colors.deepOrangeAccent)),
                   ),
                 ],
               ),
@@ -62,8 +66,22 @@ class AccountPage extends StatelessWidget {
               children: [
                 ListTile(
                   title: Text("Personal Information"),
-                  leading: Icon(Icons.person_2_outlined, color: Colors.deepOrangeAccent),
-                  trailing: Icon(Icons.arrow_forward_ios),
+                  leading: Padding(
+                      padding: EdgeInsets.only(
+                        left: 8.0,
+                        top: 3.0,
+                      ),
+                      child: SvgPicture.asset(
+                        "assets/images/person.svg",
+                        width: 24,
+                        height: 24,
+                      )),
+                  trailing: SizedBox(
+                      // height: 24,
+                      // width: 24,
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                      )),
                   onTap: () {},
                 ),
                 Divider(
@@ -71,7 +89,16 @@ class AccountPage extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text("Let us help you"),
-                  leading: Icon(Icons.call, color: Colors.deepOrangeAccent),
+                  leading: Padding(
+                      padding: EdgeInsets.only(
+                        left: 8.0,
+                        top: 3.0,
+                      ),
+                      child: SvgPicture.asset(
+                        "assets/images/phone-call.svg",
+                        width: 24,
+                        height: 24,
+                      )),
                   trailing: Icon(Icons.arrow_forward_ios),
                   onTap: () {},
                 ),
@@ -80,7 +107,16 @@ class AccountPage extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text("Logout"),
-                  leading: Icon(Icons.logout, color: Colors.deepOrangeAccent),
+                  leading: Padding(
+                      padding: EdgeInsets.only(
+                        left: 8.0,
+                        top: 3.0,
+                      ),
+                      child: SvgPicture.asset(
+                        "assets/images/log-out.svg",
+                        width: 24,
+                        height: 24,
+                      )),
                   trailing: Icon(Icons.arrow_forward_ios),
                   onTap: () {},
                 ),
