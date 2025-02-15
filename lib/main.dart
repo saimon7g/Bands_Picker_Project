@@ -20,10 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/Artcell' : (context) => Artcell(),
-        '/NogorB' : (context) => NogorB(),
-        '/warfaze' : (context) => Warfaze(),
-        '/miles' : (context) => Miles(),
+        '/bandDetails' : (context) => BandDetails(),
         '/bookingPolicies' : (context) => BookingPolicies(),
       },
       title: 'Flutter Demo',
