@@ -2,6 +2,7 @@ import 'package:bands_picker/ui/utils/constants/appsColor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/models/band_details_models.dart';
+import '../../../routes/routes.dart';
 import 'ReUsableWidget/BandsCardContainer.dart';
 
 
@@ -43,7 +44,7 @@ class HomePage extends StatelessWidget {
       "minimumPrice": 70000,
       "bookingPolicy": ["Advance payment required", "Refundable within 3 days"],
       "cancellationPolicy": ["Cancellation allowed within 5 days"],
-      "coverPhotos": ["Nogor Baul.png", "Ashes.png"],
+      "coverPhotos": ["assets/Nogor Baul.png", "assets/Artcell.png", "assets/Ashes.png"],
       "bookingDates": [
         {"date": "2025-08-10T00:00:00.000", "location": "Sylhet", "uuid": "103", "inBangladesh": true},
         {"date": "2025-09-05T00:00:00.000", "location": "Khulna", "uuid": "104", "inBangladesh": true}
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
       "minimumPrice": 60000,
       "bookingPolicy": ["Advance payment required", "Non-refundable"],
       "cancellationPolicy": ["Cancellation allowed within 10 days"],
-      "coverPhotos": ["warfaze1.jpg", "warfaze2.jpg"],
+      "coverPhotos": ["assets/Warfaze.png", "assets/Artcell.png", "assets/Ashes.png"],
       "bookingDates": [
         {"date": "2025-10-20T00:00:00.000", "location": "Rajshahi", "uuid": "105", "inBangladesh": true},
         {"date": "2025-11-25T00:00:00.000", "location": "Barisal", "uuid": "106", "inBangladesh": true}
@@ -86,7 +87,7 @@ class HomePage extends StatelessWidget {
       "minimumPrice": 80000,
       "bookingPolicy": ["50% advance payment required", "Refundable within 7 days"],
       "cancellationPolicy": ["Cancellation allowed within 14 days"],
-      "coverPhotos": ["miles1.jpg", "miles2.jpg"],
+      "coverPhotos": ["assets/Miles.png", "assets/Artcell.png", "assets/Ashes.png"],
       "bookingDates": [
         {"date": "2025-09-15T00:00:00.000", "location": "Dhaka", "uuid": "101", "inBangladesh": true},
         {"date": "2025-12-10T00:00:00.000", "location": "Chittagong", "uuid": "102", "inBangladesh": true}
@@ -108,7 +109,7 @@ class HomePage extends StatelessWidget {
       "minimumPrice": 70000,
       "bookingPolicy": ["Full payment required", "Non-refundable"],
       "cancellationPolicy": ["Cancellation allowed within 5 days"],
-      "coverPhotos": ["ashes1.jpg", "ashes2.jpg"],
+      "coverPhotos": ["assets/Ashes.png", "assets/Artcell.png", "assets/Ashes.png"],
       "bookingDates": [
         {"date": "2025-08-22T00:00:00.000", "location": "Sylhet", "uuid": "107", "inBangladesh": true},
         {"date": "2025-11-18T00:00:00.000", "location": "Khulna", "uuid": "108", "inBangladesh": true}
@@ -130,7 +131,7 @@ class HomePage extends StatelessWidget {
       "minimumPrice": 100000,
       "bookingPolicy": ["30% advance payment required", "Refundable within 10 days"],
       "cancellationPolicy": ["Cancellation allowed within 7 days"],
-      "coverPhotos": ["lrb1.jpg", "lrb2.jpg"],
+      "coverPhotos": ["assets/LRB.png", "assets/Artcell.png", "assets/Ashes.png"],
       "bookingDates": [
         {"date": "2025-07-30T00:00:00.000", "location": "Dhaka", "uuid": "109", "inBangladesh": true},
         {"date": "2025-10-05T00:00:00.000", "location": "Chittagong", "uuid": "110", "inBangladesh": true}
@@ -152,7 +153,7 @@ class HomePage extends StatelessWidget {
       "minimumPrice": 50000,
       "bookingPolicy": ["Full payment required", "Non-refundable"],
       "cancellationPolicy": ["Cancellation allowed within 3 days"],
-      "coverPhotos": ["chirkutt1.jpg", "chirkutt2.jpg"],
+      "coverPhotos": ["assets/Chirkut.png", "assets/Artcell.png", "assets/Ashes.png"],
       "bookingDates": [
         {"date": "2025-09-10T00:00:00.000", "location": "Rajshahi", "uuid": "111", "inBangladesh": true},
         {"date": "2025-12-20T00:00:00.000", "location": "Barisal", "uuid": "112", "inBangladesh": true}
@@ -174,7 +175,7 @@ class HomePage extends StatelessWidget {
       "minimumPrice": 90000,
       "bookingPolicy": ["20% advance payment required", "Refundable within 5 days"],
       "cancellationPolicy": ["Cancellation allowed within 7 days"],
-      "coverPhotos": ["nemesis1.jpg", "nemesis2.jpg"],
+      "coverPhotos": ["assets/Nemesis.png", "assets/Artcell.png", "assets/Ashes.png"],
       "bookingDates": [
         {"date": "2025-08-05T00:00:00.000", "location": "Dhaka", "uuid": "113", "inBangladesh": true},
         {"date": "2025-11-12T00:00:00.000", "location": "Chittagong", "uuid": "114", "inBangladesh": true}
@@ -420,81 +421,182 @@ class _BandDetailsState extends State<BandDetails> {
             ),
           ),
           SizedBox(height: 20,),
-          Text("${band.bandName}",
-            style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontWeight: FontWeight.w600,
-              fontSize: 20,
-              height: 30 / 20,
-              letterSpacing: 0,
+          Padding(
+            padding: EdgeInsets.only(left: 8,),
+            child: Text("${band.bandName}",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+                height: 30 / 20,
+                letterSpacing: 0,
+              ),
             ),
           ),
           SizedBox(height: 8,),
-          Text("${band.location}",
-            style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontWeight: FontWeight.w500,
-              fontSize: 10,
-              height: 15 / 10,
-              letterSpacing: 0,
+          Padding(
+            padding: EdgeInsets.only(left: 8),
+            child: Text("${band.location}",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w500,
+                fontSize: 10,
+                height: 15 / 10,
+                letterSpacing: 0,
+              ),
             ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: [
-                  SvgPicture.asset(
-                    "assets/Band_Details_Page/user.svg",
-                    width: 20,
-                    height: 20,
+              Padding(
+                padding: EdgeInsets.only(top: 16.0),
+                child: Column(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/Band_Details_Page/user.svg",
+                      //semanticsLabel: 'User Icon',
+                      //placeholderBuilder: (BuildContext context) => CircularProgressIndicator(),
+                      width: 24,
+                      height: 24,
+                    ),
+                    SizedBox(height: 5,),
+                    Text("${band.members.length} musicians"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 16.0),
+                  child: Column(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/Band_Details_Page/PlayCircle.svg",
+                      width: 24,
+                      height: 24,
+                    ),
+                    SizedBox(height: 5,),
+                    Text("${band.numOfConcerts} Concert"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 16),
+                child: Column(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/Band_Details_Page/MusicNotes.svg",
+                      width: 24,
+                      height: 24,
+                    ),
+                    SizedBox(height: 5,),
+                    Text("${band.songType}"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 16),
+                child: Column(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/Band_Details_Page/AirplaneInFlight.svg",
+                      width: 24,
+                      height: 24,
+                    ),
+                    SizedBox(height: 5,),
+                    Text("${band.wayOfTravel}"),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 20,),
+          Padding(
+            padding: EdgeInsets.only(left: 8),
+            child: Text("About ${band.bandName}",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+                height: 30 / 20,
+                letterSpacing: 0,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 8),
+            child: Text("${band.about}",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                fontSize: 10,
+                height: 15 / 10,
+                letterSpacing: 0,
+              ),
+            ),
+          ),
+          SizedBox(height: 20,),
+          Padding(
+            padding: EdgeInsets.only(left: 8),
+            child: Text("Price Details",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+                height: 30 / 20,
+                letterSpacing: 0,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 8),
+            child: Row(
+              children: [
+                SvgPicture.asset(
+                  "assets/Band_Details_Page/Tk(Stroke).svg",
+                  width: 12,
+                  height: 15,
+                ),
+                SizedBox(width: 5,),
+                Text("Start from ${band.minimumPrice}",
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                    height: 20 / 14,
+                    letterSpacing: 0,
                   ),
-                  //Icon(Icons.person),
-                  SizedBox(height: 5,),
-                  Text("${band.members.length}"),
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(Icons.audiotrack),
-                  SizedBox(height: 5,),
-                  Text("${band.numOfConcerts}"),
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(Icons.audiotrack),
-                  SizedBox(height: 5,),
-                  Text("${band.songType}"),
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(Icons.flight),
-                  SizedBox(height: 5,),
-                  Text("${band.wayOfTravel}"),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
           SizedBox(height: 20,),
-          Text("About ${band.bandName}", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-          Text("${band.about}"),
-          SizedBox(height: 20,),
-          Text("Price Details", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-          Row(
-            children: [
-              Icon(Icons.attach_money),
-              Text("Start from ${band.minimumPrice}"),
-            ],
-          ),
-          ElevatedButton(
-            onPressed: ()=> Navigator.pushNamed(context, '/bookingPolicies'),
-            child: Container(
+          Container(
+            margin: EdgeInsets.fromLTRB(60, 5, 60, 5),
+            width: 328,
+            height: 40,
+            decoration: BoxDecoration(
               color: AppColor.bookingReqColor,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColor.bookingReqColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.zero, // Makes the button square
+                ),
+              ),
+              onPressed: ()=> Navigator.pushNamed(context, BandPickerRoutes.bookingPolicies, arguments: band),
               child: Center(
                 child: Text(
-                  "Request For Book", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  "Request For Book",
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    height: 24 / 16,
+                    letterSpacing: 0,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -505,24 +607,39 @@ class _BandDetailsState extends State<BandDetails> {
   }
 }
 
-class BookingPolicies extends StatelessWidget{
+class BookingPolicies extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    final Band band = ModalRoute.of(context)!.settings.arguments as Band;
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
+      appBar: AppBar(title: Text("${band.bandName} Booking Polices"),),
+      body: Column(
+        children: band.bookingPolicy.map((policy) {
+          return Padding(
+            padding: EdgeInsets.only(left: 25, right: 25),
+            child: Row(
               children: [
                 Text("\u2022"),
-                SizedBox(width: 5,),
-                Text("What are the reasons of flight cancellation when atmorspheric pressure is 1052 hPa"),
+                SizedBox(width: 5),
+                Expanded(
+                  child: Text(
+                    policy,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 15,
+                      height: 15 / 19.5,
+                      letterSpacing: 0,
+                    ),
+                  ),
+                ),
               ],
             ),
-          ],
-        ),
+          );
+        }).toList(),
       ),
     );
   }

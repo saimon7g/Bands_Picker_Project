@@ -1,5 +1,6 @@
 import 'package:bands_picker/ui/core/models/band_details_models.dart';
 import 'package:flutter/material.dart';
+import '../../../../routes/routes.dart';
 
 class BandCard extends StatelessWidget {
   final Band band;
@@ -32,7 +33,7 @@ class BandCard extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, '/bandDetails', arguments: band),
+          onPressed: () => Navigator.pushNamed(context, BandPickerRoutes.bandDetails, arguments: band),
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.zero,
             backgroundColor: Colors.white,
