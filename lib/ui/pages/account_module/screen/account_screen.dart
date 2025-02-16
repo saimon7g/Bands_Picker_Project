@@ -2,23 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../utils/constants/app_colors.dart';
+import '../../message_module/data/inbox_model.dart';
 
 class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.backgroundColor,
-      appBar: PreferredSize(
-        preferredSize: Size(360, 64),
-        child: Padding(
-            padding: EdgeInsets.fromLTRB(95, 16, 95, 16),
-            child: AppBar(
-              centerTitle: true,
-              title: Image.asset("assets/images/appbarLogo.png"),
-              backgroundColor: AppColor.backgroundColor,
-              elevation: 0,
-            )),
-      ),
+      appBar: CustomAppBar(),
       body: Column(
         children: [
           // First Container (Profile)

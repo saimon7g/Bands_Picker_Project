@@ -2,86 +2,26 @@ import 'package:bands_picker/ui/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import '../controllers/chat_controller.dart';
 import '../data/inbox_model.dart';
+import 'package:bands_picker/ui/utils/constants/date_helper.dart';
 
 
 class MessagePage extends StatelessWidget {
-  // Sample data list
-  final List<ChatMessage> messages = [
-    ChatMessage(
-      name: "Abu Sufian",
-      message: "Could you please tell me your",
-      dateTime: DateTime.now(),
-      notSeenMessageAmount: 3,
-      imagePath: 'assets/images/eattt.png',
-    ),
-    ChatMessage(
-      name: "Omar Faruk",
-      message: "Could you please tell me your",
-      dateTime: DateTime.now(),
-      notSeenMessageAmount: 1,
-      imagePath: 'assets/images/Elli5.png',
-    ),
-    ChatMessage(
-      name: "S M Emon",
-      message: "Could you please tell me your",
-      dateTime: DateTime.now(),
-      notSeenMessageAmount: 1,
-      imagePath: 'assets/images/Ellips.png',
-    ),
-    ChatMessage(
-      name: "Afridi",
-      message: "Could you please tell me your",
-      dateTime: DateTime.now(),
-      notSeenMessageAmount: 0, // No unread messages
-      imagePath: 'assets/images/human.png',
-    ),
-    ChatMessage(
-      name: "Kaium",
-      message: "Could you please tell me your",
-      dateTime: DateTime.now(),
-      notSeenMessageAmount: 0,
-      imagePath: 'assets/images/65.png',
-    ),
-    ChatMessage(
-      name: "Rakib",
-      message: "Could you please tell me your",
-      dateTime: DateTime.now(),
-      notSeenMessageAmount: 0,
-      imagePath: 'assets/images/Ellipsededd.png',
-    ),
-  ];
 
-  String formatDateTime(DateTime dateTime, bool isSeen) {
-    if (isSeen) {
-      return DateFormat('dd MMMM yyyy').format(dateTime); // Show date if seen
-    } else {
-      return DateFormat('h:mm a').format(dateTime); // Show time in AM/PM format if not seen
-    }
-  }
+  final ChatController chatController = Get.put(ChatController());
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.backgroundColor,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(64),
-        child: Padding(
-          padding: EdgeInsets.only(left: 95, right: 95, top: 16,bottom: 16),
-          child: AppBar(
-            centerTitle: true,
-            title: Image.asset("assets/images/appbarLogo.png", height: 32, width:170,),
-            backgroundColor: AppColor.backgroundColor,
-
-          ),
-        ),
-      ),
+      appBar: CustomAppBar(),
       body: Padding(
         padding: EdgeInsets.only(left: 20, right: 20, top: 10),
         child: ListView.builder(
-          itemCount: messages.length,
+          itemCount: chatController.messages.length,
           itemBuilder: (context, index) {
-            ChatMessage chat = messages[index];
+            ChatMessage chat = chatController.messages[index];
             bool isSeen = chat.notSeenMessageAmount == 0;
 
             return Column(
@@ -103,7 +43,7 @@ class MessagePage extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        formatDateTime(chat.dateTime ?? DateTime.now(), isSeen),
+                        DateHelper.formatDateTime(chat.dateTime ?? DateTime.now(), isSeen),
                         style: TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                       if (chat.notSeenMessageAmount > 0) ...[

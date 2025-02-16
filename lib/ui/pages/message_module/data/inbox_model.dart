@@ -1,4 +1,6 @@
 import 'package:intl/intl.dart';
+import 'package:flutter/material.dart'; //bcz i used appbar code here
+import 'package:bands_picker/ui/utils/constants/app_colors.dart';  //bcz i used appbar code here
 
 class ChatMessage {
   final String name;
@@ -39,5 +41,24 @@ class ChatMessage {
       'notSeenMessageAmount': notSeenMessageAmount,
       'imagePath': imagePath,
     };
+  }
+}
+
+//creating appbar here
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Size get preferredSize => const Size(360, 64); // Set fixed height
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(95, 16, 95, 16),
+      child: AppBar(
+        centerTitle: true,
+        title: Image.asset("assets/images/appbarLogo.png"),
+        backgroundColor: AppColor.backgroundColor,
+        elevation: 0,
+      ),
+    );
   }
 }
