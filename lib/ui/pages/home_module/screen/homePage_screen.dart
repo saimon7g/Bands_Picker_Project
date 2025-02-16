@@ -1,4 +1,5 @@
 import 'package:bands_picker/ui/utils/constants/appsColor.dart';
+import 'package:bands_picker/ui/utils/constants/bullet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/models/band_details_models.dart';
@@ -621,7 +622,7 @@ class BookingPolicies extends StatelessWidget {
             padding: EdgeInsets.only(left: 25, right: 25),
             child: Row(
               children: [
-                Text("\u2022"),
+                Text(Bullet.bulletString),
                 SizedBox(width: 5),
                 Expanded(
                   child: Text(
