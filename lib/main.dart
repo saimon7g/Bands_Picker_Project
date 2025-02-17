@@ -4,12 +4,14 @@ import 'ui/pages/account_module/screen/account_screen.dart';
 import 'ui/pages/home_module/screen/home_screen.dart';
 import 'ui/pages/booking_module/screen/booking_screen.dart';
 import 'ui/pages/message_module/screen/message_screen.dart';
+import 'package:bands_picker/di/locator.dart' as di;
 
 
+void main() async{
 
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
 
-
-void main() {
   runApp(const MyApp());
 }
 

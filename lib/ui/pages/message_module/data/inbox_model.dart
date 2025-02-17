@@ -35,7 +35,7 @@ class ChatMessage {
 
   DateTime? get dateTime => null;
 
-  // Convert Model to JSON8
+  // Convert Model to JSON
   Map<String, dynamic> toJson() {
     return {
       'name': name,
