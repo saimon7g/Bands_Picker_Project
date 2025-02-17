@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'ui/pages/home_module/screen/homePage_screen.dart';
 import 'ui/pages/booking_module/screen/booking_screen.dart';
 import 'ui/pages/message_module/screen/message_screen.dart';
+import 'ui/pages/splash_module/splash.dart';
+import 'ui/routes/routes.dart';
 
 
 
@@ -19,19 +21,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {
-        '/Artcell' : (context) => Artcell(),
-        '/NogorB' : (context) => NogorB(),
-        '/warfaze' : (context) => Warfaze(),
-        '/miles' : (context) => Miles(),
-        '/bookingPolicies' : (context) => BookingPolicies(),
-      },
+      routes: BandPickerRoutes.allRoutes(),
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SplashScreen(),
+      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

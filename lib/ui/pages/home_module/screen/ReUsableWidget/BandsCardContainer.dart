@@ -1,14 +1,16 @@
+import 'package:bands_picker/ui/core/models/band_details_models.dart';
 import 'package:flutter/material.dart';
+import '../../../../routes/routes.dart';
 
 class BandCard extends StatelessWidget {
-  final String routeName, bandName, assetName;
+  final Band band;
 
   const BandCard({
     super.key,
-    required this.routeName,
-    required this.assetName,
-    required this.bandName,
+    required this.band,
   });
+
+  String get routeName => "/${band.bandName.replaceAll(' ', '')}";
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class BandCard extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, routeName),
+          onPressed: () => Navigator.pushNamed(context, BandPickerRoutes.bandDetails, arguments: band),
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.zero,
             backgroundColor: Colors.white,
@@ -46,7 +48,7 @@ class BandCard extends StatelessWidget {
               Expanded(
                 flex: 7,
                 child: Image.asset(
-                  "assets/$assetName.png",
+                  "assets/${band.bandName}.png",
                   fit: BoxFit.cover,
                   width: double.infinity,
                   height: double.infinity,
@@ -59,7 +61,7 @@ class BandCard extends StatelessWidget {
                   padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                   color: Colors.white,
                   child: Text(
-                    bandName,
+                    band.bandName,
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
