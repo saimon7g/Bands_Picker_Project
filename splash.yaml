@@ -1,0 +1,9 @@
+flutter_native_splash:
+  image: assets/Splash.png
+  image_dark: assets/Splash.png
+
+  android_12:
+    image: assets/Splash.png
+    image_dark: assets/Splash.png
+
+  web: false
