@@ -30,6 +30,7 @@ class Band {
     required this.bookingDates,
   });
 
+  // parsing
   factory Band.fromJson(Map<String, dynamic> json) {
     return Band(
       bandName: json['bandName'],

@@ -1,190 +1,13 @@
+import 'package:bands_picker/ui/pages/home_module/controller/home_controller.dart';
 import 'package:bands_picker/ui/utils/constants/appsColor.dart';
 import 'package:bands_picker/ui/utils/constants/bullet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import '../../../core/models/band_details_models.dart';
-import '../../../routes/routes.dart';
 import 'ReUsableWidget/BandsCardContainer.dart';
 
-
-
 class HomePage extends StatelessWidget {
-
-  final List<Band> bands = [
-    Band.fromJson({
-      "bandName": "Artcell",
-      "location": "Dhaka, Bangladesh",
-      "members": [
-        {"name": "Lincoln", "uuid": "001", "role": "Vocalist"},
-        {"name": "Cezanne", "uuid": "002", "role": "Guitarist"}
-      ],
-      "numOfConcerts": 100,
-      "songType": "Progressive Rock",
-      "wayOfTravel": "Bus",
-      "about": "Artcell is a progressive metal band from Bangladesh.",
-      "minimumPrice": 50000,
-      "bookingPolicy": ["Advance payment required", "Non-refundable"],
-      "cancellationPolicy": ["Cancellation allowed within 7 days"],
-      "coverPhotos": ["assets/Artcell.png", "assets/Ashes.png"],
-      "bookingDates": [
-        {"date": "2025-06-01T00:00:00.000", "location": "Dhaka", "uuid": "101"},
-        {"date": "2025-07-15T00:00:00.000", "location": "Chittagong", "uuid": "102"}
-      ]
-    }),
-
-    Band.fromJson({
-      "bandName": "Nogor Baul",
-      "location": "Dhaka, Bangladesh",
-      "members": [
-        {"name": "James", "uuid": "003", "role": "Vocalist"}
-      ],
-      "numOfConcerts": 200,
-      "songType": "Rock",
-      "wayOfTravel": "Car",
-      "about": "Nogor Baul is a popular rock band in Bangladesh.",
-      "minimumPrice": 70000,
-      "bookingPolicy": ["Advance payment required", "Refundable within 3 days"],
-      "cancellationPolicy": ["Cancellation allowed within 5 days"],
-      "coverPhotos": ["assets/Nogor Baul.png", "assets/Artcell.png", "assets/Ashes.png"],
-      "bookingDates": [
-        {"date": "2025-08-10T00:00:00.000", "location": "Sylhet", "uuid": "103", "inBangladesh": true},
-        {"date": "2025-09-05T00:00:00.000", "location": "Khulna", "uuid": "104", "inBangladesh": true}
-      ]
-    }),
-
-    Band.fromJson({
-      "bandName": "Warfaze",
-      "location": "Dhaka, Bangladesh",
-      "members": [
-        {"name": "Oni Hasan", "uuid": "005", "role": "Guitarist"},
-        {"name": "Kamrul", "uuid": "006", "role": "Drummer"}
-      ],
-      "numOfConcerts": 150,
-      "songType": "Heavy Metal",
-      "wayOfTravel": "Bus",
-      "about": "Warfaze is a legendary heavy metal band from Bangladesh.",
-      "minimumPrice": 60000,
-      "bookingPolicy": ["Advance payment required", "Non-refundable"],
-      "cancellationPolicy": ["Cancellation allowed within 10 days"],
-      "coverPhotos": ["assets/Warfaze.png", "assets/Artcell.png", "assets/Ashes.png"],
-      "bookingDates": [
-        {"date": "2025-10-20T00:00:00.000", "location": "Rajshahi", "uuid": "105", "inBangladesh": true},
-        {"date": "2025-11-25T00:00:00.000", "location": "Barisal", "uuid": "106", "inBangladesh": true}
-      ]
-    }),
-
-    Band.fromJson({
-      "bandName": "Miles",
-      "location": "Dhaka, Bangladesh",
-      "members": [
-        {"name": "Hamin Ahmed", "uuid": "001", "role": "Vocalist"},
-        {"name": "Manam Ahmed", "uuid": "002", "role": "Guitarist"},
-        {"name": "Syed Ziaur Rahman Turjo", "uuid": "003", "role": "Keyboardist"}
-      ],
-      "numOfConcerts": 200,
-      "songType": "Rock",
-      "wayOfTravel": "Flight",
-      "about": "Miles is one of the pioneering rock bands in Bangladesh, known for their timeless music.",
-      "minimumPrice": 80000,
-      "bookingPolicy": ["50% advance payment required", "Refundable within 7 days"],
-      "cancellationPolicy": ["Cancellation allowed within 14 days"],
-      "coverPhotos": ["assets/Miles.png", "assets/Artcell.png", "assets/Ashes.png"],
-      "bookingDates": [
-        {"date": "2025-09-15T00:00:00.000", "location": "Dhaka", "uuid": "101", "inBangladesh": true},
-        {"date": "2025-12-10T00:00:00.000", "location": "Chittagong", "uuid": "102", "inBangladesh": true}
-      ]
-    }),
-
-    Band.fromJson({
-      "bandName": "Ashes",
-      "location": "Dhaka, Bangladesh",
-      "members": [
-        {"name": "Shafin Ahmed", "uuid": "007", "role": "Vocalist"},
-        {"name": "Ibrar Tipu", "uuid": "008", "role": "Guitarist"},
-        {"name": "Sumon", "uuid": "009", "role": "Drummer"}
-      ],
-      "numOfConcerts": 180,
-      "songType": "Pop Rock",
-      "wayOfTravel": "Bus",
-      "about": "Ashes is a popular Bangladeshi band known for their melodious pop-rock songs.",
-      "minimumPrice": 70000,
-      "bookingPolicy": ["Full payment required", "Non-refundable"],
-      "cancellationPolicy": ["Cancellation allowed within 5 days"],
-      "coverPhotos": ["assets/Ashes.png", "assets/Artcell.png", "assets/Ashes.png"],
-      "bookingDates": [
-        {"date": "2025-08-22T00:00:00.000", "location": "Sylhet", "uuid": "107", "inBangladesh": true},
-        {"date": "2025-11-18T00:00:00.000", "location": "Khulna", "uuid": "108", "inBangladesh": true}
-      ]
-    }),
-
-    Band.fromJson({
-      "bandName": "LRB",
-      "location": "Dhaka, Bangladesh",
-      "members": [
-        {"name": "Ayub Bachchu", "uuid": "010", "role": "Vocalist and Guitarist"},
-        {"name": "Shuvo", "uuid": "011", "role": "Bassist"},
-        {"name": "Mithu", "uuid": "012", "role": "Drummer"}
-      ],
-      "numOfConcerts": 300,
-      "songType": "Rock",
-      "wayOfTravel": "Flight",
-      "about": "LRB is one of the most iconic rock bands in Bangladesh, led by the legendary Ayub Bachchu.",
-      "minimumPrice": 100000,
-      "bookingPolicy": ["30% advance payment required", "Refundable within 10 days"],
-      "cancellationPolicy": ["Cancellation allowed within 7 days"],
-      "coverPhotos": ["assets/LRB.png", "assets/Artcell.png", "assets/Ashes.png"],
-      "bookingDates": [
-        {"date": "2025-07-30T00:00:00.000", "location": "Dhaka", "uuid": "109", "inBangladesh": true},
-        {"date": "2025-10-05T00:00:00.000", "location": "Chittagong", "uuid": "110", "inBangladesh": true}
-      ]
-    }),
-
-    Band.fromJson({
-      "bandName": "Chirkut",
-      "location": "Dhaka, Bangladesh",
-      "members": [
-        {"name": "Tanzir Tuhin", "uuid": "013", "role": "Vocalist"},
-        {"name": "Sharmin Sultana Sumi", "uuid": "014", "role": "Vocalist"},
-        {"name": "Pavel Areen", "uuid": "015", "role": "Guitarist"}
-      ],
-      "numOfConcerts": 120,
-      "songType": "Fusion",
-      "wayOfTravel": "Bus",
-      "about": "Chirkutt is a unique band blending traditional Bangladeshi music with modern fusion.",
-      "minimumPrice": 50000,
-      "bookingPolicy": ["Full payment required", "Non-refundable"],
-      "cancellationPolicy": ["Cancellation allowed within 3 days"],
-      "coverPhotos": ["assets/Chirkut.png", "assets/Artcell.png", "assets/Ashes.png"],
-      "bookingDates": [
-        {"date": "2025-09-10T00:00:00.000", "location": "Rajshahi", "uuid": "111", "inBangladesh": true},
-        {"date": "2025-12-20T00:00:00.000", "location": "Barisal", "uuid": "112", "inBangladesh": true}
-      ]
-    }),
-
-    Band.fromJson({
-      "bandName": "Nemesis",
-      "location": "Dhaka, Bangladesh",
-      "members": [
-        {"name": "Maher Khan", "uuid": "016", "role": "Vocalist"},
-        {"name": "Shams", "uuid": "017", "role": "Guitarist"},
-        {"name": "Bassbaba Sumon", "uuid": "018", "role": "Bassist"}
-      ],
-      "numOfConcerts": 250,
-      "songType": "Hard Rock",
-      "wayOfTravel": "Flight",
-      "about": "Nemesis is a legendary hard rock band from Bangladesh, known for their powerful performances.",
-      "minimumPrice": 90000,
-      "bookingPolicy": ["20% advance payment required", "Refundable within 5 days"],
-      "cancellationPolicy": ["Cancellation allowed within 7 days"],
-      "coverPhotos": ["assets/Nemesis.png", "assets/Artcell.png", "assets/Ashes.png"],
-      "bookingDates": [
-        {"date": "2025-08-05T00:00:00.000", "location": "Dhaka", "uuid": "113", "inBangladesh": true},
-        {"date": "2025-11-12T00:00:00.000", "location": "Chittagong", "uuid": "114", "inBangladesh": true}
-      ]
-    })
-  ];
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -200,448 +23,134 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        body: ListView(
-        children: [
-          Container(
-            width: 328,
-            height: 50,
-            //margin: EdgeInsets.fromLTRB(16, 40, 0, 0),
-            padding: EdgeInsets.fromLTRB(8, 3, 8, 3),
-            child: TextField(
-              decoration: InputDecoration(
-                prefixIcon: Padding(
-                  padding: EdgeInsets.all(2.0),
-                  child: SvgPicture.asset(
-                    "assets/search.svg",
-                    width: 24,
-                    height: 24,
-                  ),
-                ),
-                hintText: "Search",
-                hintStyle: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 13,
-                  height: 19.5 / 13,
-                  letterSpacing: 0,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(100),
-                ),
-                filled: true,
-                fillColor: Colors.white,
-              ),
-              onChanged: (value) {
-                print('Search query: $value');
-              },
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(8, 10, 5, 3),
-            child: Text(
-                'Featured',
-                style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w500,
-                fontSize: 13,
-                height: 19.5 / 13,
-                letterSpacing: 0,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(8, 10,8,3),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    BandCard(
-                      band: bands[0]
-                    ),
-                    BandCard(
-                      band: bands[1]
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    BandCard(
-                      band: bands[2]
-                    ),
-                    BandCard(
-                      band: bands[3]
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(8, 10, 5, 3),
-            child: Text(
-              'Popular',
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w500,
-                fontSize: 13,
-                height: 19.5 / 13,
-                letterSpacing: 0,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(8, 10,5,3),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    BandCard(
-                      band: bands[4]
-                    ),
-                    BandCard(
-                      band: bands[5]
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    BandCard(
-                      band: bands[6]
-                    ),
-                    BandCard(
-                      band: bands[7]
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      )
-    );
-  }
-}
-
-
-class BandDetails extends StatefulWidget {
-  @override
-  _BandDetailsState createState() => _BandDetailsState();
-}
-
-class _BandDetailsState extends State<BandDetails> {
-  final PageController _pageController = PageController(initialPage: 0);
-  int _currentPage = 0;
-
-  late Band band;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    final Band receivedBand = ModalRoute.of(context)?.settings.arguments as Band;
-    setState(() {
-      band = receivedBand;
-      images = band.coverPhotos;
-    });
-  }
-
-  List<String> images = [];
-
-
-  void _nextPage() {
-    if (_currentPage < images.length - 1) {
-      _pageController.nextPage(
-        duration: Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
-
-  void _previousPage() {
-    if (_currentPage > 0) {
-      _pageController.previousPage(
-        duration: Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("${band.bandName} Details")),
-      backgroundColor: AppColor.backgroundColor,
-      body: ListView(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 246,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                PageView.builder(
-                  controller: _pageController,
-                  itemCount: images.length,
-                  onPageChanged: (index) {
-                    setState(() {
-                      _currentPage = index;
-                    });
-                  },
-                  itemBuilder: (context, index) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        images[index],
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                        height: 350,
-                      ),
-                    );
-                  },
-                ),
-                Positioned(
-                  left: 10,
-                  child: IconButton(
-                    icon: Icon(Icons.arrow_back_ios, color: AppColor.arrowIconColor),
-                    onPressed: _previousPage,
-                  ),
-                ),
-                Positioned(
-                  right: 10,
-                  child: IconButton(
-                    icon: Icon(Icons.arrow_forward_ios, color: AppColor.arrowIconColor),
-                    onPressed: _nextPage,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20,),
-          Padding(
-            padding: EdgeInsets.only(left: 8,),
-            child: Text("${band.bandName}",
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-                height: 30 / 20,
-                letterSpacing: 0,
-              ),
-            ),
-          ),
-          SizedBox(height: 8,),
-          Padding(
-            padding: EdgeInsets.only(left: 8),
-            child: Text("${band.location}",
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w500,
-                fontSize: 10,
-                height: 15 / 10,
-                letterSpacing: 0,
-              ),
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: GetBuilder<HomeController>(
+          builder: (home) {
+            return ListView(
             children: [
+              Container(
+                width: 328,
+                height: 50,
+                //margin: EdgeInsets.fromLTRB(16, 40, 0, 0),
+                padding: EdgeInsets.fromLTRB(8, 3, 8, 3),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.all(2.0),
+                      child: SvgPicture.asset(
+                        "assets/search.svg",
+                        width: 24,
+                        height: 24,
+                      ),
+                    ),
+                    hintText: "Search",
+                    hintStyle: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13,
+                      height: 19.5 / 13,
+                      letterSpacing: 0,
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
+                  onChanged: (value) {
+                    print('Search query: $value');
+                  },
+                ),
+              ),
               Padding(
-                padding: EdgeInsets.only(top: 16.0),
+                padding: EdgeInsets.fromLTRB(8, 10, 5, 3),
+                child: Text(
+                    'Featured',
+                    style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 13,
+                    height: 19.5 / 13,
+                    letterSpacing: 0,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(8, 10,8,3),
                 child: Column(
                   children: [
-                    SvgPicture.asset(
-                      "assets/Band_Details_Page/user.svg",
-                      //semanticsLabel: 'User Icon',
-                      //placeholderBuilder: (BuildContext context) => CircularProgressIndicator(),
-                      width: 24,
-                      height: 24,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BandCard(
+                          band: home.band[0]
+                        ),
+                        BandCard(
+                          band: home.band[1]
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 5,),
-                    Text("${band.members.length} musicians"),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BandCard(
+                          band: home.band[2]
+                        ),
+                        BandCard(
+                          band: home.band[3]
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 16.0),
-                  child: Column(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/Band_Details_Page/PlayCircle.svg",
-                      width: 24,
-                      height: 24,
-                    ),
-                    SizedBox(height: 5,),
-                    Text("${band.numOfConcerts} Concert"),
-                  ],
+                padding: EdgeInsets.fromLTRB(8, 10, 5, 3),
+                child: Text(
+                  'Popular',
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 13,
+                    height: 19.5 / 13,
+                    letterSpacing: 0,
+                  ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 16),
+                padding: EdgeInsets.fromLTRB(8, 10,5,3),
                 child: Column(
                   children: [
-                    SvgPicture.asset(
-                      "assets/Band_Details_Page/MusicNotes.svg",
-                      width: 24,
-                      height: 24,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BandCard(
+                          band: home.band[4]
+                        ),
+                        BandCard(
+                          band: home.band[5]
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 5,),
-                    Text("${band.songType}"),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 16),
-                child: Column(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/Band_Details_Page/AirplaneInFlight.svg",
-                      width: 24,
-                      height: 24,
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BandCard(
+                          band: home.band[6]
+                        ),
+                        BandCard(
+                          band: home.band[7]
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 5,),
-                    Text("${band.wayOfTravel}"),
                   ],
                 ),
               ),
             ],
-          ),
-          SizedBox(height: 20,),
-          Padding(
-            padding: EdgeInsets.only(left: 8),
-            child: Text("About ${band.bandName}",
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-                height: 30 / 20,
-                letterSpacing: 0,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 8),
-            child: Text("${band.about}",
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w400,
-                fontSize: 10,
-                height: 15 / 10,
-                letterSpacing: 0,
-              ),
-            ),
-          ),
-          SizedBox(height: 20,),
-          Padding(
-            padding: EdgeInsets.only(left: 8),
-            child: Text("Price Details",
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-                height: 30 / 20,
-                letterSpacing: 0,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 8),
-            child: Row(
-              children: [
-                SvgPicture.asset(
-                  "assets/Band_Details_Page/Tk(Stroke).svg",
-                  width: 12,
-                  height: 15,
-                ),
-                SizedBox(width: 5,),
-                Text("Start from ${band.minimumPrice}",
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                    height: 20 / 14,
-                    letterSpacing: 0,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20,),
-          Container(
-            margin: EdgeInsets.fromLTRB(60, 5, 60, 5),
-            width: 328,
-            height: 40,
-            decoration: BoxDecoration(
-              color: AppColor.bookingReqColor,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColor.bookingReqColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.zero, // Makes the button square
-                ),
-              ),
-              onPressed: ()=> Navigator.pushNamed(context, BandPickerRoutes.bookingPolicies, arguments: band),
-              child: Center(
-                child: Text(
-                  "Request For Book",
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    height: 24 / 16,
-                    letterSpacing: 0,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class BookingPolicies extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    final Band band = ModalRoute.of(context)!.settings.arguments as Band;
-    return Scaffold(
-      backgroundColor: AppColor.backgroundColor,
-      appBar: AppBar(title: Text("${band.bandName} Booking Polices"),),
-      body: Column(
-        children: band.bookingPolicy.map((policy) {
-          return Padding(
-            padding: EdgeInsets.only(left: 25, right: 25),
-            child: Row(
-              children: [
-                Text(Bullet.bulletString),
-                SizedBox(width: 5),
-                Expanded(
-                  child: Text(
-                    policy,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 15,
-                      height: 15 / 19.5,
-                      letterSpacing: 0,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        }).toList(),
-      ),
+                  );
+          }
+        )
     );
   }
 }
