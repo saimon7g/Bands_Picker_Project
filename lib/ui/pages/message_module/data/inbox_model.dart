@@ -1,21 +1,24 @@
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart'; //bcz i used appbar code here
 import 'package:bands_picker/ui/utils/constants/app_colors.dart';  //bcz i used appbar code here
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ChatMessage {
+
   final String name;
   final String message;
   final String time;
   final String date;
   final int notSeenMessageAmount;
-  final String? imagePath;
+  final String imagePath;
 
   ChatMessage({
+
     required this.name,
     required this.message,
     required DateTime dateTime,
     required this.notSeenMessageAmount,
-    this.imagePath,
+    required this.imagePath,
   })  : time = DateFormat('h:mm a').format(dateTime), //: is called an initializer list. It's used to set values before the body of the constructor runs.
         date = DateFormat('dd MMMM yyyy').format(dateTime);
 
@@ -55,8 +58,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.fromLTRB(95, 16, 95, 16),
       child: AppBar(
         centerTitle: true,
-        title: Image.asset("assets/images/appbarLogo.png"),
-        backgroundColor: AppColor.backgroundColor,
+        // title: Image.asset("assets/images/appbarLogo.png"),
+         title: SvgPicture.asset("assets/images/applogo.svg"),
         elevation: 0,
       ),
     );

@@ -10,10 +10,11 @@ class ChatController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    loadMessages(); // Load messages when the controller is initialized
+    loadMessages(); // Load messages when the controller is initialized.This line calls
+    // the loadMessages() method, which is defined later in the code. This is where you'll fetch or load your chat messages.
   }
 
-  void loadMessages() {
+  void loadMessages() { // This is the name of the method. It's a custom method that you've created to load your chat messages.
     messages.value = [
       ChatMessage(
         name: "Abu Sufian",
