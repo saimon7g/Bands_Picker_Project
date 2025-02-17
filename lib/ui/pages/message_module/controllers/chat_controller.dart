@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import '../../message_module/data/inbox_model.dart'; // Import your model
 
