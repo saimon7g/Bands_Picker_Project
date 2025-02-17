@@ -1,7 +1,5 @@
 
 import 'package:bands_picker/ui/core/models/band_details_models.dart';
-import 'package:bands_picker/ui/core/models/band_member_model.dart';
-import 'package:bands_picker/ui/core/models/booking_date_model.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController implements GetxService{
