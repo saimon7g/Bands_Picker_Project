@@ -11,7 +11,8 @@ class BookingsPage extends StatefulWidget {
   _BookingsPageState createState() => _BookingsPageState();
 }
 
-class _BookingsPageState extends State<BookingsPage> with SingleTickerProviderStateMixin {
+class _BookingsPageState extends State<BookingsPage>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -37,11 +38,17 @@ class _BookingsPageState extends State<BookingsPage> with SingleTickerProviderSt
             const Text.rich(
               TextSpan(
                 text: 'Bands',
-                style: TextStyle(color: AppColor.primaryPurple ,fontWeight: FontWeight.w600, height: 30),
+                style: TextStyle(
+                    color: AppColor.primaryPurple,
+                    fontWeight: FontWeight.w600,
+                    height: 30),
                 children: [
                   TextSpan(
                     text: 'Picker',
-                    style: TextStyle(color: AppColor.secondaryRed, fontWeight: FontWeight.w600, height: 30),
+                    style: TextStyle(
+                        color: AppColor.secondaryRed,
+                        fontWeight: FontWeight.w600,
+                        height: 30),
                   ),
                 ],
               ),
@@ -92,3 +99,16 @@ class _BookingsPageState extends State<BookingsPage> with SingleTickerProviderSt
     super.dispose();
   }
 }
+// import 'package:flutter/material.dart';
+
+// class BookingsPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Center(
+//       child: Text(
+//         'Bookings Page',
+//         style: TextStyle(fontSize: 24),
+//       ),
+//     );
+//   }
+// }
