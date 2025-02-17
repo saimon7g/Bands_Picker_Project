@@ -7,11 +7,13 @@ import 'ui/pages/message_module/screen/message_screen.dart';
 import 'ui/pages/splash_module/splash.dart';
 import 'ui/routes/routes.dart';
 
+import 'package:bands_picker/di/locator.dart' as di;
 
 
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
 
-
-void main() {
   runApp(const MyApp());
 }
 
