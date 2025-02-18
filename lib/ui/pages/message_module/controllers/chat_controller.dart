@@ -24,7 +24,7 @@ class ChatController extends GetxController implements GetxService{
    ChatMessage(name: "Rakib", message: "Could you please tell me your",
        notSeenMessageAmount: 0, imagePath:'assets/images/65.png',
        dateTime: DateTime.now() ),
-  ].obs;
+  ];
 
 
 
