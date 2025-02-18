@@ -1,10 +1,8 @@
 import 'package:bands_picker/ui/pages/home_module/controller/home_controller.dart';
 import 'package:bands_picker/ui/utils/constants/appsColor.dart';
-import 'package:bands_picker/ui/utils/constants/bullet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import '../../../core/models/band_details_models.dart';
 import 'ReUsableWidget/BandsCardContainer.dart';
 
 class HomePage extends StatelessWidget {

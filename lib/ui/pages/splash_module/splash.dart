@@ -1,4 +1,4 @@
-import 'package:bands_picker/ui/pages/home_module/screen/homePage_screen.dart';
+import 'package:bands_picker/ui/pages/home_module/screen/home_page_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
