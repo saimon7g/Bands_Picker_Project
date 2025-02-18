@@ -32,7 +32,7 @@ class MessagePage extends StatelessWidget {
                   height: 88,
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   color: email.notSeenMessageAmount > 0
-                      ? AppColor.notseenmessage //// if msg not seen
+                      ? AppColor.lightPink //// if msg not seen
                       : Colors.transparent, // if msg seen
                   child: Row(
                     children: [
@@ -82,7 +82,7 @@ class MessagePage extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           height: 15/10,
                                           letterSpacing: 0,
-                                          color: AppColor.messagecolor,
+                                          color: AppColor.darkShade,
                                         ),
                                       ),
                                       SizedBox(height: 15),
@@ -92,7 +92,7 @@ class MessagePage extends StatelessWidget {
                                           height: 20,
                                           alignment: Alignment.center,
                                           decoration: BoxDecoration(
-                                            color: AppColor.unseenmessencount,
+                                            color: AppColor.lightCoral,
                                             shape: BoxShape.circle,
                                           ),
                                           child: Text(
@@ -122,7 +122,7 @@ class MessagePage extends StatelessWidget {
                                   fontFamily: 'Montserrat',
                                   fontWeight: FontWeight.w400,
                                    height: 19.5 / 13,
-                                  color: AppColor.messagecolor),
+                                  color: AppColor.darkShade),
                             ),
                           ],
                         ),

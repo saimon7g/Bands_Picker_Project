@@ -19,7 +19,7 @@ class AccountPage extends StatelessWidget {
             width: 388,
             height: 226,
             decoration: BoxDecoration(
-              color: AppColor.notseenmessage,
+              color: AppColor.lightPink,
             ),
             child: Container(
               height: 162,
@@ -51,7 +51,7 @@ class AccountPage extends StatelessWidget {
                         fontSize: 25,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w600,
-                        color: AppColor.messagecolor,
+                        color: AppColor.blackColor,
                       height: 37.5 / 25,
                       letterSpacing: 0,
                     ),
@@ -64,7 +64,7 @@ class AccountPage extends StatelessWidget {
                           fontSize: 13,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w600,
-                          color: AppColor.messagecolor,
+                          color: AppColor.lightCoral,
                           height: 19.5 / 13,
                           letterSpacing: 0,
                         ),
