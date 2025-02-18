@@ -1,6 +1,7 @@
 import 'package:bands_picker/ui/core/models/band_details_models.dart';
 import 'package:flutter/material.dart';
 import '../../../../routes/routes.dart';
+import '../../../../utils/constants/appsColor.dart';
 
 class BandCard extends StatelessWidget {
   final Band band;
@@ -15,11 +16,10 @@ class BandCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 190,
+      width: MediaQuery.of(context).size.width*0.45,
       height: 152,
       decoration: BoxDecoration(
-        color: Colors.white,
-        //border: Border.all(color: Colors.black),
+        color: AppColor.bandCardBoxDecorationColor,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(

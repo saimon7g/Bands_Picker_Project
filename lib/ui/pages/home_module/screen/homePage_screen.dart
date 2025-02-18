@@ -30,7 +30,6 @@ class HomePage extends StatelessWidget {
               Container(
                 width: 328,
                 height: 50,
-                //margin: EdgeInsets.fromLTRB(16, 40, 0, 0),
                 padding: EdgeInsets.fromLTRB(8, 3, 8, 3),
                 child: TextField(
                   decoration: InputDecoration(
@@ -38,17 +37,12 @@ class HomePage extends StatelessWidget {
                       padding: EdgeInsets.all(2.0),
                       child: SvgPicture.asset(
                         "assets/search.svg",
-                        width: 24,
-                        height: 24,
+                        width: 24, height: 24,
                       ),
                     ),
                     hintText: "Search",
-                    hintStyle: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 13,
-                      height: 19.5 / 13,
-                      letterSpacing: 0,
+                    hintStyle: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.w400,
+                      fontSize: 13, height: 19.5 / 13,
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(100),
@@ -65,92 +59,62 @@ class HomePage extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(8, 10, 5, 3),
                 child: Text(
                     'Featured',
-                    style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 13,
-                    height: 19.5 / 13,
-                    letterSpacing: 0,
+                    style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.w500,
+                    fontSize: 13, height: 19.5 / 13,
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(8, 10,8,3),
+                padding: EdgeInsets.fromLTRB(8, 10, 8, 3),
                 child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        BandCard(
-                          band: home.band[0]
-                        ),
-                        BandCard(
-                          band: home.band[1]
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        BandCard(
-                          band: home.band[2]
-                        ),
-                        BandCard(
-                          band: home.band[3]
-                        ),
-                      ],
-                    ),
-                  ],
+                  children: List.generate(2, (rowIndex) =>
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: List.generate(2, (colIndex) {
+                              int index = rowIndex * 2 + colIndex;
+                              return BandCard(band: home.band[index]);
+                            }),
+                          ),
+                          if (rowIndex < 1) SizedBox(height: 16),
+                        ],
+                      ),
+                  ),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(8, 10, 5, 3),
                 child: Text(
                   'Popular',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 13,
-                    height: 19.5 / 13,
-                    letterSpacing: 0,
+                  style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.w500,
+                    fontSize: 13, height: 19.5 / 13,
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(8, 10,5,3),
+                padding: EdgeInsets.fromLTRB(8, 10, 8, 3),
                 child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        BandCard(
-                          band: home.band[4]
-                        ),
-                        BandCard(
-                          band: home.band[5]
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        BandCard(
-                          band: home.band[6]
-                        ),
-                        BandCard(
-                          band: home.band[7]
-                        ),
-                      ],
-                    ),
-                  ],
+                  children: List.generate(2, (rowIndex) =>
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: List.generate(2, (colIndex) {
+                              int index = rowIndex * 2 + colIndex + 4; // Calculate correct index
+                              return BandCard(band: home.band[index]);
+                            }),
+                          ),
+                          if (rowIndex < 1) SizedBox(height: 16), // Adds space except after last row
+                        ],
+                      ),
+                  ),
                 ),
               ),
             ],
-                  );
-          }
-        )
+          );
+        }
+      )
     );
   }
 }
