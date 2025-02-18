@@ -1,7 +1,8 @@
-import 'package:intl/intl.dart';
+
 import 'package:flutter/material.dart'; //bcz i used appbar code here
 import 'package:bands_picker/ui/utils/constants/app_colors.dart';  //bcz i used appbar code here
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 
 class ChatMessage {
 
@@ -35,7 +36,7 @@ class ChatMessage {
 
   DateTime? get dateTime => null;
 
-  // Convert Model to JSON8
+  // Convert Model to JSON
   Map<String, dynamic> toJson() {
     return {
       'name': name,
