@@ -1,11 +1,14 @@
 
+import 'package:bands_picker/ui/pages/account_module/screen/account_screen.dart';
 import 'package:flutter/material.dart';
-import 'ui/pages/account_module/screen/account_screen.dart';
-import 'ui/pages/home_module/screen/home_screen.dart';
 import 'ui/pages/booking_module/screen/booking_screen.dart';
 import 'ui/pages/message_module/screen/message_screen.dart';
 import 'package:bands_picker/di/locator.dart' as di;
+import 'ui/pages/home_module/screen/home_page_screen.dart';
+import 'ui/pages/splash_module/splash.dart';
+import 'ui/routes/routes.dart';
 
+import 'package:bands_picker/di/locator.dart' as di;
 
 void main() async{
 
@@ -21,12 +24,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: BandPickerRoutes.allRoutes(),
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SplashScreen(),
+      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
